@@ -1,0 +1,52 @@
+###
+GET {{origin}}/campaignPerformance
+   ?metrics=total_ctr
+   &aggregates=datasource,campaign
+   &sorts=total_ctr%20desc
+   &limit=5
+
+### Total Clicks for a given Datasource for a given Date range
+
+GET {{origin}}/campaignPerformance
+   ?metrics=total_clicks
+   &filterDatasources=Facebook%20Ads
+   &filterDateStart=2019-07-01
+   &filterDateEnd=2019-07-15
+   &aggregates=datasource
+
+###
+
+GET {{origin}}/campaignPerformance
+   ?metrics=total_clicks,total_impressions,total_ctr
+   &filterDateStart=2019-07-01
+   &filterDateEnd=2019-07-15
+   &aggregates=campaign
+
+###
+
+GET {{origin}}/campaignPerformance
+   ?metrics=total_ctr
+   &aggregates=campaign
+   &sorts=campaign
+
+###
+
+GET {{origin}}/campaignPerformance
+   ?metrics=total_ctr
+   &aggregates=campaign
+   &sorts=total_ctr%20desc
+
+###
+
+GET {{origin}}/campaignPerformance
+   ?metrics=total_ctr
+   &filterCampaigns=Vorteilspartner
+   &aggregates=campaign
+
+###
+
+GET {{origin}}/campaignPerformance
+   ?metrics=total_impressions
+   &aggregates=date
+   &sorts=date
+   &limit=5

@@ -1,0 +1,11 @@
+# Datasource for local docker postgres defined in
+# /docker/compose/asdw-localdev/docker-compose.yml
+spring:
+  profiles: asdw-localdev-docker
+
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://172.36.59.51:5432/asdwdb
+    username: asdwuser
+    password: asdwsecret
+    driverClassName: org.postgresql.Driver

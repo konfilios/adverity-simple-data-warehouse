@@ -1,0 +1,34 @@
+version: "2"
+
+services:
+  db:
+    image: postgres:12.4
+    environment:
+      POSTGRES_DB: asdwdb
+      POSTGRES_USER: asdwuser
+      POSTGRES_PASSWORD: asdwsecret
+    networks:
+      lan:
+        ipv4_address: 172.36.59.51
+
+  query-webapp:
+    image: docker.pkg.github.com/konfilios/adverity-simple-data-warehouse/query-webapp:latest
+    environment:
+      - SPRING.DATASOURCE.URL=jdbc:postgresql://172.36.59.51:5432/asdwdb
+      - SPRING.DATASOURCE.USERNAME=asdwuser
+      - SPRING.DATASOURCE.PASSWORD=asdwsecret
+      - SPRING.DATASOURCE.DRIVER_CLASS_NAME=org.postgresql.Driver
+    networks:
+      lan:
+        ipv4_address: 172.36.59.52
+
+
+
+networks:
+  lan:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        -
+          subnet: 172.36.59.0/24

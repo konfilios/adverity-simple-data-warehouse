@@ -1,0 +1,16 @@
+spring.batch.initialize-schema: always
+#spring.batch.job.enabled: false
+
+asdw.etl:
+  inputCsv: classpath:/etl/csv/PIxSyyrIKFORrCXfMYqZBI.csv
+  chunkSize: 100
+
+
+spring.jackson.serialization.indent_output: true
+spring.jackson.serialization.write_dates_as_timestamps: false
+
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+    drop-first: false
+    enabled: true
