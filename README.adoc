@@ -81,7 +81,7 @@ contain special characters (whitespace, etc.)
 |Filter only records with dates equal or later than
 the passed date. Use YYYY-mm-dd format.
 
-|*filterDateStart*
+|*filterDateEnd*
 |`Date`
 |Filter only records with dates equal or earlier than
 the passed date. Use YYYY-mm-dd format.
@@ -182,6 +182,7 @@ GET http://172.36.59.52:8080/campaignPerformance
 ----
 
 Notes:
+
 1. Results are ordered by descending total_ctrl
 2. A limit of 5 was set of brevity and readability
 
@@ -253,6 +254,7 @@ GET http://172.36.59.52:8080/campaignPerformance
 ----
 
 Notes:
+
 1. Results are ordered by ascending date
 2. A limit of 5 was set of brevity and readability
 
