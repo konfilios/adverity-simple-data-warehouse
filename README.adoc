@@ -13,7 +13,7 @@ In order to get the project up and running, enter
 
 You can verify everything worked by trying a query:
 
-http://172.36.59.52:8080/campaignPerformance?metrics=total_clicks,total_impressions,total_ctr&aggregates=datasource,campaign
+http://adverity.gemini19.nonce.gr:5080/campaignPerformance?metrics=total_clicks,total_impressions,total_ctr&aggregates=datasource,campaign
 
 == Development mode
 
@@ -125,11 +125,11 @@ Below are some example queries.
 
 === Total Clicks for a given Datasource for a given Date range
 
-Request (http://172.36.59.52:8080/campaignPerformance?metrics=total_clicks&filterDatasources=Facebook%20Ads&filterDateStart=2019-07-01&filterDateEnd=2019-07-15&aggregates=datasource[click to execute on docker]):
+Request (http://adverity.gemini19.nonce.gr:5080/campaignPerformance?metrics=total_clicks&filterDatasources=Facebook%20Ads&filterDateStart=2019-07-01&filterDateEnd=2019-07-15&aggregates=datasource[click to execute on docker]):
 
 [source,http]
 ----
-GET http://172.36.59.52:8080/campaignPerformance
+GET http://adverity.gemini19.nonce.gr:5080/campaignPerformance
    ?metrics=total_clicks
    &filterDatasources=Facebook%20Ads
    &filterDateStart=2019-07-01
@@ -170,11 +170,11 @@ Response
 
 === Click-Through Rate (CTR) per Datasource and Campaign
 
-Request (http://172.36.59.52:8080/campaignPerformance?metrics=total_ctr&aggregates=datasource,campaign&sorts=total_ctr%20desc&limit=5[click to execute on docker]):
+Request (http://adverity.gemini19.nonce.gr:5080/campaignPerformance?metrics=total_ctr&aggregates=datasource,campaign&sorts=total_ctr%20desc&limit=5[click to execute on docker]):
 
 [source,http]
 ----
-GET http://172.36.59.52:8080/campaignPerformance
+GET http://adverity.gemini19.nonce.gr:5080/campaignPerformance
    ?metrics=total_ctr
    &aggregates=datasource,campaign
    &sorts=total_ctr%20desc
@@ -242,11 +242,11 @@ Response:
 
 === Total Impressions over time (daily)
 
-Request (http://172.36.59.52:8080/campaignPerformance?metrics=total_impressions&aggregates=date&sorts=date&limit=5[click to execute on docker]):
+Request (http://adverity.gemini19.nonce.gr:5080/campaignPerformance?metrics=total_impressions&aggregates=date&sorts=date&limit=5[click to execute on docker]):
 
 [source,http]
 ----
-GET http://172.36.59.52:8080/campaignPerformance
+GET http://adverity.gemini19.nonce.gr:5080/campaignPerformance
    ?metrics=total_impressions
    &aggregates=date
    &sorts=date

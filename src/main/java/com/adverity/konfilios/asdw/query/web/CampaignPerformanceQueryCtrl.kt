@@ -18,9 +18,9 @@ class CampaignPerformanceQueryCtrl(
     private val campaignPerformanceQuerySrv: CampaignPerformanceQuerySrv
 ) {
 
-    @GetMapping
+    @GetMapping(produces=["application/json"])
     fun executeQuery(
-        @RequestParam(required = false, defaultValue = "")
+        @RequestParam(required = false, defaultValue = "total_clicks,total_impressions,total_ctrl")
         metrics: List<String>,
 
         @RequestParam(required = false, defaultValue = "")
@@ -30,7 +30,7 @@ class CampaignPerformanceQueryCtrl(
         sorts: List<String>,
 
         @RequestParam(required = false)
-        offset: Int?,
+        offset: Int? = 100,
 
         @RequestParam(required = false)
         limit: Int?,

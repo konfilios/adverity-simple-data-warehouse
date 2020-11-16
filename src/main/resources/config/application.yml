@@ -5,6 +5,11 @@ asdw.etl:
   inputCsv: classpath:/etl/csv/PIxSyyrIKFORrCXfMYqZBI.csv
   chunkSize: 100
 
+server:
+  error:
+    include-binding-errors: always
+    include-exception: true
+    include-message: always
 
 spring.jackson.serialization.indent_output: true
 spring.jackson.serialization.write_dates_as_timestamps: false
